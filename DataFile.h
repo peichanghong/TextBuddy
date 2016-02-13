@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <string>
 #include <vector>
 
@@ -22,7 +23,7 @@ private:
 	void openNewTextFile();
 
 	//Parser string extraction
-	std::string commandExtraction(std::string input);
+	std::string commandExtraction(std::string &input);
 	std::string descriptionExtraction(std::string input);
 
 	//Logic command determination stage
@@ -42,11 +43,15 @@ private:
 
 	void promptUserCommandUntilExit();
 	void saveDataFiletoTextFile();
+
+	void printMessageAfterCommand(COMMAND_TYPE commandType , std::string descriptionString);
 	
 public:
 	DataFile();
 	~DataFile();
 	void setEnvironment(int argc, char* argv[]);
+	void displayWelcomePage();
+	void executeCommandUntilExit();
 	
 
 };

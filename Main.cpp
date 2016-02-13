@@ -29,7 +29,9 @@
 std::string checkForDataFile(int argc, char* argv[]); 
 
 int main (int argc, char* argv[]) {
-	
+	DataFile TextBuddy;
+	TextBuddy.setEnvironment(argc,argv);
+
 	return 0;
 }
 
